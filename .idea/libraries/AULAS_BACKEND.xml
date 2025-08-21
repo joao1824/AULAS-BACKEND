@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="AULAS-BACKEND">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Lista002.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Lista001.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
