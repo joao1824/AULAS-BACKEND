@@ -1,4 +1,4 @@
-package org.example.ex03INCOMPLETA;
+package org.example.ex03;
 
 public class Musica {
     private String titulo;

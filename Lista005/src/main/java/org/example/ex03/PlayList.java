@@ -1,4 +1,4 @@
-package org.example.ex03INCOMPLETA;
+package org.example.ex03;
 import java.util.ArrayList;
 
 public class PlayList {
@@ -18,9 +18,7 @@ public class PlayList {
         this.nome = nome;
     }
 
-    public ArrayList<Musica> getMusicas() {
-        return musicas;
-    }
+
 
     public void mostrarMusicas() {
         System.out.println("PlayList");
