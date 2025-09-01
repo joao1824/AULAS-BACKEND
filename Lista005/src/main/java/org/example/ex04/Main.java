@@ -8,10 +8,10 @@ public class Main {
         System.out.println("Nome: ");
         Scanner input = new Scanner(System.in);
         String nome = input.nextLine();
-        input.nextLine();
+
         System.out.println("Descrição: ");
         String descricao = input.nextLine();
-        input.nextLine();
+
         System.out.println("Tipo(Imagem 1 - Video 2 - Texto 3): ");
         int tipo = input.nextInt();
         String tipo_escolha = "";
