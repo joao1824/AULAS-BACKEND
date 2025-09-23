@@ -1,4 +1,4 @@
-package org.example;
+package com.example._3;
 
 public class Estudante {
     private String nome;
@@ -8,8 +8,8 @@ public class Estudante {
     private String telefone;
 
     public Estudante(String nome, String codigo, String curso, String email, String telefone) {
-        this.nome = nome;
         this.codigo = codigo;
+        this.nome = nome;
         this.curso = curso;
         this.email = email;
         this.telefone = telefone;
