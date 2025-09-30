@@ -33,13 +33,17 @@ public class JogadorService {
         return jogadorRepository.findAll();
     }
 
-    public Optional<Jogador> getOneJogador(Integer id){
-        return jogadorRepository.findById(id);
+    public Jogador getOneJogador(Integer id){
+        return jogadorRepository.findById(id).orElse(null);
     }
 
     public List<Jogador> deleteJogador(Integer id){
         jogadorRepository.deleteById(id);
         return jogadorRepository.findAll();
+    }
+
+    public List<Jogador> findJogadoresByNome(String nome){
+        return jogadorRepository.findAllByNome(nome);
     }
 
 

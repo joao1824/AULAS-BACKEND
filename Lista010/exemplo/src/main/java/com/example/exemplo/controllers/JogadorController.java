@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/jogador")
+@RequestMapping("/jogadores")
 public class JogadorController {
 
     private JogadorService jogadorService;
@@ -33,12 +33,21 @@ public class JogadorController {
        return jogadorService.getAllJogadores();
     }
 
-    @GetMapping()
-    public Optional<Jogador> getOneJogador(@RequestBody Integer id){
-        return jogadorService.getOneJogador(id);
+    @DeleteMapping
+    public List<Jogador> deleteJogdor(@RequestBody Jogador jogador){
+        return jogadorService.deleteJogador(jogador.getId());
     }
 
 
+    @GetMapping("/jogadores/jogador")
+    public Jogador getOneJogador(@RequestBody Jogador jogador){
+        return jogadorService.getOneJogador(jogador.getId());
+    }
 
+
+    @GetMapping("/joagador/{nome}")
+    public List<Jogador> getJogadorebyNome(@PathVariable Jogador jogador){
+        return jogadorService.findJogadoresByNome(jogador.getNome());
+    }
 
 }

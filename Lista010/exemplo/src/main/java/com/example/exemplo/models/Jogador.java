@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
-import java.util.UUID;
+
 
 @Entity
 public class Jogador {
@@ -25,7 +25,7 @@ public class Jogador {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
