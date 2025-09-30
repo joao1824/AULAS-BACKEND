@@ -6,6 +6,7 @@ import com.example.exemplo.repository.JogadorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class JogadorService {
@@ -32,8 +33,14 @@ public class JogadorService {
         return jogadorRepository.findAll();
     }
 
+    public Optional<Jogador> getOneJogador(Integer id){
+        return jogadorRepository.findById(id);
+    }
 
-
+    public List<Jogador> deleteJogador(Integer id){
+        jogadorRepository.deleteById(id);
+        return jogadorRepository.findAll();
+    }
 
 
 

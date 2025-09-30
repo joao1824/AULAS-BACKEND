@@ -11,8 +11,8 @@ import java.util.UUID;
 @Entity
 public class Jogador {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String nome;
     private String sobrenome;
     private String clube;
@@ -21,11 +21,11 @@ public class Jogador {
 
 
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 

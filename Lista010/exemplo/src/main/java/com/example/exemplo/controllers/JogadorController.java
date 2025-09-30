@@ -6,6 +6,7 @@ import com.example.exemplo.services.JogadorService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/jogador")
@@ -32,7 +33,10 @@ public class JogadorController {
        return jogadorService.getAllJogadores();
     }
 
-
+    @GetMapping()
+    public Optional<Jogador> getOneJogador(@RequestBody Integer id){
+        return jogadorService.getOneJogador(id);
+    }
 
 
 
