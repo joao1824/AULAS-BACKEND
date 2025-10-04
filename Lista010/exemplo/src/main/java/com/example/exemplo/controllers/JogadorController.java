@@ -6,7 +6,6 @@ import com.example.exemplo.services.JogadorService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/jogadores")
@@ -39,15 +38,15 @@ public class JogadorController {
     }
 
 
-    @GetMapping("/jogadores/jogador")
+    @GetMapping("/jogador")
     public Jogador getOneJogador(@RequestBody Jogador jogador){
         return jogadorService.getOneJogador(jogador.getId());
     }
 
 
-    @GetMapping("/joagador/{nome}")
-    public List<Jogador> getJogadorebyNome(@PathVariable Jogador jogador){
-        return jogadorService.findJogadoresByNome(jogador.getNome());
+    @GetMapping("/{nome}")
+    public List<Jogador> getJogadoresbyNome(@PathVariable String nome){
+        return jogadorService.findJogadoresByNome(nome);
     }
 
 }
