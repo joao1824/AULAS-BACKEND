@@ -14,6 +14,12 @@ public class Reservas {
         jogadores.add(new Jogador("Mateus", "Atacante", 24));
     }
 
+    public List<Jogador> getJogadores() {
+        return jogadores;
+    }
+
+
+
     public Jogador getJogador(String posicao) {
         for (Jogador jogador : jogadores) {
             if (jogador.getPosicao().equals(posicao)) {
@@ -24,12 +30,17 @@ public class Reservas {
     }
 
     public void removeJogador(String posicao) {
+        Jogador jogador_remover;
         for (Jogador jogador : jogadores) {
             if (jogador.getPosicao().equals(posicao)) {
-                jogadores.remove(jogador);
+                jogador_remover = jogador;
             }
         }
-        return;
+        jogadores.remove(posicao);
+    }
+
+    public void addJogador(Jogador jogador) {
+        jogadores.add(jogador);
     }
 
 

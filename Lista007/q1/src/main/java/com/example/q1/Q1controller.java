@@ -3,10 +3,7 @@ package com.example.q1;
 
 import com.example.q1.models.Jogador;
 import com.example.q1.models.Principal;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +46,13 @@ public class Q1controller {
     @GetMapping
     public List<Jogador> getJogadores() {
         return principal.getJogadores();
+    }
+
+    @PostMapping("{posicao}")
+    public List<Jogador> mudarPosicao(@PathVariable String posicao) {
+
+        return principal.mudarJogador(posicao);
+
     }
 
 

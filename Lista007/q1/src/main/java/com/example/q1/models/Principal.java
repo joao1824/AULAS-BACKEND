@@ -10,17 +10,27 @@ public class Principal {
         this.reservas = new Reservas(reservas);
     }
 
-    public List<Jogador> addJogador(String posicao) {
-        if (jogadores.size() >= 11){
-            throw new RuntimeException("Limite de jogadores");
+    public List<Jogador> mudarJogador(String posicao) {
+
+
+
+        Jogador jogador_antigo = null;
+        Jogador jogador_novo = null;
+
+        jogador_novo = reservas.getJogador(posicao);
+
+        for (Jogador jogador : jogadores) {
+            if (jogador.getPosicao().equals(posicao)) {
+                    jogador_antigo = jogador;
+            }
         }
-        if (reservas.getJogador(posicao) != null){
-           Jogador jogador = reservas.getJogador(posicao);
-           jogadores.add(jogador);
-           reservas.removeJogador(posicao);
-           return jogadores;
-        }
-        throw new RuntimeException("Posicao inexistente");
+
+        jogadores.add(jogador_novo);
+        reservas.removeJogador(posicao);
+        jogadores.remove(jogador_antigo);
+        reservas.addJogador(jogador_antigo);
+
+        return jogadores;
 
     }
 
